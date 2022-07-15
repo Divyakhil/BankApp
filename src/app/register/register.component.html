@@ -19,6 +19,7 @@
                         <input type="text" class="form-control" name="username" formControlName="username" placeholder="username"id="login_user" required>
                         
                     </div>
+                    <div *ngIf="this.registerForm.get('username')?.touched&&this.registerForm.get('username')?.errors" style="color: red;">Invalid username</div>
                       <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -26,19 +27,20 @@
                           <input type="text" class="form-control" name="acno" formControlName="acno" placeholder="Account number" id="login_accno" required>
                           
                       </div>
+                      <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: red;">Invalid Accnumber</div>  
                       <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-key"></i></span>
                           </div>
                           <input type="password" class="form-control" name="pswd" formControlName="pswd"  placeholder="password" id="login_password" required>
                       </div>
-                      
+                      <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: red;">Invalid password</div>
                       <div class="form-group">
                           <input type="submit" value="Register"  class="btn float-right login_btn " style="width:50%" >
                       </div>
                   </form>
               </div>
-              <p style="color:white;align-items:baseline;">Already existind user? <a routerLink="">Log in</a></p>
+              <p style="color:white;align-items:baseline;">Already existing user? <a routerLink="">Log in</a></p>
           </div>
       </div>
   </div>
